@@ -40,17 +40,13 @@ const MORSE_TABLE = {
 function decode(expr) {
   // write your solution here
   const encodedLetters = expr.match(/.{1,10}/g);
-  // console.log("encodedLetters:", encodedLetters);
 
   let decoded = "";
   encodedLetters.forEach(element => {
-    // element = element.replace(/\*{1,10}/g, );
     element = element
-      // .replace(/(\*+)/g, " ")
       .replace(/10/g, ".")
       .replace(/11/g, "-")
       .replace(/0/g, "");
-    // console.log("element: ", element);
     element === "**********"
       ? (decoded += " ")
       : (decoded += MORSE_TABLE[element]);
